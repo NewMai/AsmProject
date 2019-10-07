@@ -34,4 +34,4 @@ nasm -f win64 x64Asm.asm
 
 # 使用 VC++ 编译器: 编译
 ml64 /c testASM.asm
-
+ml64 /nologo /c testASM2.asm
