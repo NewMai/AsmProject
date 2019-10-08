@@ -10,5 +10,6 @@ section .bss
 section .text
 
 foo:
+	mov rax, qword [rip + 020h]
 	xor rax, rax
 	ret
