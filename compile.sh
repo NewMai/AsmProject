@@ -35,3 +35,12 @@ nasm -f win64 x64Asm.asm
 # 使用 VC++ 编译器: 编译
 ml64 /c testASM.asm
 ml64 /nologo /c testASM2.asm
+
+
+
+# https://www.cnblogs.com/liangxiaofeng/p/3473879.html
+
+# 直接编译成 可执行文件
+ml64 /nologo testASM2.asm /link /subsystem:windows /entry:foo 
+
+
