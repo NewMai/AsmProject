@@ -3,5 +3,7 @@
 *.obj
 *.exe
 *.lnk
-
+*.id*
+*.nam
+*.til
 
