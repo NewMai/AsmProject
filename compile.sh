@@ -39,8 +39,14 @@ ml64 /nologo /c testASM2.asm
 
 
 # https://www.cnblogs.com/liangxiaofeng/p/3473879.html
+# https://www.52pojie.cn/thread-679902-1-1.html
 
 # 直接编译成 可执行文件
 ml64 /nologo testASM2.asm /link /subsystem:windows /entry:foo 
 
-
+# 或者分为编译和链接两个阶段
+ml64 /nologo /c testASM2.asm
+link /nologo testASM2.obj /dynamicbase:no /subsystem:windows /entry:foo
+# /dynamicbase:no 是去掉地址随机化
+# /subsystem:windows 指定生成的程序为窗口应用程序
+# /entry:foo 指定程序的入口点
