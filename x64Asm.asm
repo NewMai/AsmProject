@@ -10,6 +10,11 @@ section .bss
 section .text
 
 foo:
-	mov rax, qword [rip + 020h]
+	mov rax, qword [rsp + 020h]
 	xor rax, rax
+    mov rax, 0x11222333
+    mov eax, 0x112233
 	ret
+
+
+; end

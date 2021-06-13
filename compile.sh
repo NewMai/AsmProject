@@ -26,9 +26,14 @@ nasm -hf
 nasm -f win32 x32Asm.asm　　　　　
 nasm -f win64 x64Asm.asm
 
-
-
-
+# 启用 VS 2015 的开发环境
+cmd
+call C:\\MyProgramFiles\\VS\\VS2015\\VC\\vcvarsall.bat x64 # For x64
+call C:\\MyProgramFiles\\VS\\VS2015\\VC\\vcvarsall.bat x86 # For x86
+nasm -f win64 x64Asm.asm -o x64Asm.obj  # 编译
+link /NOLOGO x64Asm.obj /ENTRY:foo /PDB:x64Asm.pdb /SUBSYSTEM:Windows /OUT:x64Asm.exe  # 链接
+x64Asm.exe # 运行
+dumpbin /DISASM x64Asm.bin  # 查看汇编
 
 # https://blog.csdn.net/dfq12345/article/details/69870513
 
